@@ -3,6 +3,7 @@
 import { motion } from "motion/react";
 import PageTransition from "@/components/PageTransition";
 import SectionHeader from "@/components/SectionHeader";
+import RotatingEmail from "@/components/RotatingEmail";
 
 const contactLinks = [
   {
@@ -20,14 +21,6 @@ const contactLinks = [
     description: "Personal side of things.",
     accent: "pink" as const,
     icon: "◈",
-  },
-  {
-    platform: "Email",
-    handle: "hello@krishnachittella.dev",
-    href: "mailto:hello@krishnachittella.dev",
-    description: "Preferred for anything substantial — roles, collabs, or conversations.",
-    accent: "yellow" as const,
-    icon: "◳",
   },
 ];
 
@@ -121,11 +114,25 @@ export default function ContactPage() {
           })}
         </div>
 
+        {/* Rotating email section */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          className="mb-12 panel-base rounded-xl p-8 border border-neon-yellow/15 text-center"
+          style={{ background: "linear-gradient(135deg, #14141C 0%, #1a1810 50%, #14141C 100%)" }}
+        >
+          <p className="font-orbitron text-xs font-semibold tracking-[0.25em] uppercase text-neon-yellow/60 mb-6">
+            Email
+          </p>
+          <RotatingEmail />
+        </motion.div>
+
         {/* Resume section */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.7, duration: 0.5 }}
+          transition={{ delay: 0.8, duration: 0.5 }}
           className="panel-base rounded-xl p-8 border border-neon-yellow/15 text-center"
           style={{ background: "linear-gradient(135deg, #14141C 0%, #1a1810 50%, #14141C 100%)" }}
         >
