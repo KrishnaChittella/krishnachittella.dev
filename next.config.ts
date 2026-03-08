@@ -1,11 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // To enable static export for GitHub Pages, uncomment the line below:
-  // output: "export",
+  output: "export",
   images: {
-    unoptimized: true, // required for static export
+    unoptimized: true, // next/image optimisation is not available in static export
   },
+  // No basePath needed — custom domain (krishnachittella.dev) serves from root
 };
 
 export default nextConfig;

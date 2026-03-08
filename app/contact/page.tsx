@@ -7,26 +7,26 @@ import SectionHeader from "@/components/SectionHeader";
 const contactLinks = [
   {
     platform: "GitHub",
-    handle: "@krishnachittella",
-    href: "https://github.com/krishnachittella",
-    description: "Code, projects, and open source contributions.",
+    handle: "@KrishnaChittella",
+    href: "https://github.com/KrishnaChittella",
+    description: "Projects, code, and open source work.",
     accent: "cyan" as const,
     icon: "⬡",
   },
   {
-    platform: "LinkedIn",
-    handle: "Krishna Chittella",
-    href: "https://linkedin.com/in/krishnachittella",
-    description: "Professional network and career history.",
-    accent: "cyan" as const,
-    icon: "◫",
+    platform: "Instagram",
+    handle: "@itsme_krishnachittella",
+    href: "https://instagram.com/itsme_krishnachittella",
+    description: "Personal side of things.",
+    accent: "pink" as const,
+    icon: "◈",
   },
   {
     platform: "Email",
     handle: "hello@krishnachittella.dev",
     href: "mailto:hello@krishnachittella.dev",
-    description: "Preferred for anything substantial.",
-    accent: "pink" as const,
+    description: "Preferred for anything substantial — roles, collabs, or conversations.",
+    accent: "yellow" as const,
     icon: "◳",
   },
 ];
@@ -62,13 +62,31 @@ export default function ContactPage() {
         <SectionHeader
           eyebrow="Let's Talk"
           title="Contact"
-          subtitle="Open to interesting conversations — collaborations, opportunities, or just talking shop."
+          subtitle="Open to interesting conversations — collaborations, engineering roles, and anything worth discussing."
           accent="cyan"
           centered
         />
 
+        {/* Availability badge */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.5 }}
+          className="flex justify-center mb-10"
+        >
+          <div className="inline-flex items-center gap-3 px-5 py-2.5 panel-base rounded-full border border-green-400/20">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-green-400" />
+            </span>
+            <span className="text-text-muted text-sm">
+              Open to <span className="text-text-primary font-medium">full-stack and data engineering</span> roles
+            </span>
+          </div>
+        </motion.div>
+
         {/* Contact links */}
-        <div className="space-y-4 mb-16">
+        <div className="space-y-4 mb-12">
           {contactLinks.map((contact, i) => {
             const a = accentMap[contact.accent];
             return (
@@ -91,9 +109,7 @@ export default function ContactPage() {
                     <p className={`font-orbitron text-xs font-semibold tracking-[0.2em] uppercase mb-1 ${a.platform}`}>
                       {contact.platform}
                     </p>
-                    <p className="text-text-primary text-base font-medium mb-0.5">
-                      {contact.handle}
-                    </p>
+                    <p className="text-text-primary text-base font-medium mb-0.5">{contact.handle}</p>
                     <p className="text-text-muted text-sm">{contact.description}</p>
                   </div>
                 </div>
@@ -109,40 +125,24 @@ export default function ContactPage() {
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6, duration: 0.5 }}
+          transition={{ delay: 0.7, duration: 0.5 }}
           className="panel-base rounded-xl p-8 border border-neon-yellow/15 text-center"
-          style={{
-            background: "linear-gradient(135deg, #14141C 0%, #1a1810 50%, #14141C 100%)",
-          }}
+          style={{ background: "linear-gradient(135deg, #14141C 0%, #1a1810 50%, #14141C 100%)" }}
         >
           <p className="font-orbitron text-xs font-semibold tracking-[0.25em] uppercase text-neon-yellow mb-3">
             Resume
           </p>
           <p className="text-text-muted text-sm mb-6 max-w-md mx-auto">
-            Available on request. Send an email and I&apos;ll get it to you directly — along with
-            anything else context that might be relevant.
+            Available on request — email me directly and I&apos;ll send it over along with any
+            additional context that&apos;s useful.
           </p>
           <a
             href="mailto:hello@krishnachittella.dev?subject=Resume Request"
-            className="inline-flex items-center gap-2 px-8 py-3.5 font-orbitron text-xs font-semibold tracking-[0.15em] uppercase border border-neon-yellow/40 text-neon-yellow bg-neon-yellow/5 hover:bg-neon-yellow/10 transition-colors duration-200"
+            className="inline-flex items-center gap-2 px-8 py-3.5 font-orbitron text-xs font-semibold tracking-[0.15em] uppercase border border-neon-yellow/40 text-neon-yellow bg-neon-yellow/5 hover:bg-neon-yellow/12 transition-colors duration-200"
           >
             Request Resume
             <span className="text-neon-yellow/60">→</span>
           </a>
-        </motion.div>
-
-        {/* Availability note */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.8, duration: 0.5 }}
-          className="mt-12 flex items-center justify-center gap-3"
-        >
-          <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-          <p className="text-text-muted text-sm">
-            Currently open to{" "}
-            <span className="text-text-primary">full-stack and data engineering roles</span>
-          </p>
         </motion.div>
       </div>
     </PageTransition>

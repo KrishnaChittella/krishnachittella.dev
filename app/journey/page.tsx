@@ -5,7 +5,7 @@ import { timeline } from "@/lib/data";
 
 export const metadata = {
   title: "Journey — Krishna Chittella",
-  description: "The technical evolution of Krishna Chittella: AI/ML → Data Engineering → Full-Stack.",
+  description: "The technical evolution of Krishna Chittella: BTech → TCS → Master's → Full-Stack.",
 };
 
 export default function JourneyPage() {
@@ -29,9 +29,9 @@ export default function JourneyPage() {
             What&apos;s Next
           </p>
           <p className="text-text-muted text-base leading-relaxed">
-            The next chapter is still being written. The pattern is clear though — follow the
-            most interesting problem available, stay long enough to understand it deeply, then
-            carry that understanding into the next thing.
+            The next chapter is still being written. The pattern is clear — follow the most
+            interesting problem available, stay long enough to understand it deeply, then carry
+            that understanding forward. Chapter 06 is incoming.
           </p>
         </div>
       </div>

@@ -17,7 +17,7 @@ export default function ExperimentsPage() {
         <SectionHeader
           eyebrow="The Lab"
           title="Experiments"
-          subtitle="Works in progress, proofs of concept, and ideas being stress-tested. This is where things are allowed to be unfinished."
+          subtitle="Works in progress, proofs of concept, and ideas being stress-tested. This is where things are allowed to be unfinished — and that's intentional."
           accent="pink"
         />
 
@@ -27,9 +27,13 @@ export default function ExperimentsPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.5 }}
           className="flex flex-col sm:flex-row items-start sm:items-center gap-6 mb-14 p-5 panel-base rounded-lg border border-neon-pink/15"
+          style={{ background: "linear-gradient(90deg, rgba(255,46,136,0.04) 0%, transparent 60%)" }}
         >
           <div className="flex items-center gap-3">
-            <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+            <span className="relative flex h-2.5 w-2.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-400" />
+            </span>
             <span className="font-orbitron text-xs font-semibold tracking-[0.2em] uppercase text-neon-pink">
               Lab Status: Active
             </span>
@@ -39,7 +43,7 @@ export default function ExperimentsPage() {
               <span className="text-green-400 font-semibold">{active.length}</span> Active
             </span>
             <span className="text-text-muted">
-              <span className="text-neon-yellow font-semibold">{wip.length}</span> In Progress
+              <span className="text-neon-yellow font-semibold">{wip.length}</span> Building
             </span>
             <span className="text-text-muted">
               <span className="text-text-muted/60 font-semibold">{ideas.length}</span> Concepts
@@ -61,11 +65,11 @@ export default function ExperimentsPage() {
           </div>
         )}
 
-        {/* WIP */}
+        {/* Building / WIP */}
         {wip.length > 0 && (
           <div className="mb-12">
             <p className="font-orbitron text-xs font-semibold tracking-[0.2em] uppercase text-neon-yellow mb-5">
-              In Progress
+              In Development
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {wip.map((exp, i) => (
@@ -75,11 +79,11 @@ export default function ExperimentsPage() {
           </div>
         )}
 
-        {/* Ideas / Concepts */}
+        {/* Concepts */}
         {ideas.length > 0 && (
           <div className="mb-12">
             <p className="font-orbitron text-xs font-semibold tracking-[0.2em] uppercase text-text-muted mb-5">
-              Concepts / Ideas
+              On The Drawing Board
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {ideas.map((exp, i) => (
@@ -101,9 +105,9 @@ export default function ExperimentsPage() {
             On Experiments
           </p>
           <p className="text-text-muted text-sm leading-relaxed">
-            Not everything here is finished. That&apos;s the point. An experiment that never
-            shipped still taught something — about the problem, the tools, or whether the idea
-            was worth pursuing at all. This page stays honest about the process.
+            Not everything here ships. That&apos;s the point. An experiment that never launched
+            still taught something — about the problem space, the tools, or whether the idea was
+            even worth pursuing. This page stays honest about the process.
           </p>
         </motion.div>
       </div>

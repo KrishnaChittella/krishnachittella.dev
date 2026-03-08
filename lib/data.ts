@@ -3,55 +3,88 @@
 export interface Project {
   id: string;
   title: string;
+  subtitle: string;
   description: string;
   stack: string[];
   github?: string;
   live?: string;
   status: "live" | "wip" | "upcoming";
   accent: "cyan" | "pink" | "yellow";
+  year?: string;
 }
 
 export const projects: Project[] = [
   {
-    id: "dataflow-pipeline",
-    title: "DataFlow Pipeline",
+    id: "inboxsignal",
+    title: "InboxSignal",
+    subtitle: "Job Pipeline Tracker",
     description:
-      "A distributed real-time data pipeline built with Apache Kafka and Spark. Ingests, transforms, and routes high-throughput event streams with fault-tolerant delivery guarantees.",
-    stack: ["Apache Kafka", "Apache Spark", "Python", "Docker", "PostgreSQL"],
-    github: "https://github.com/krishnachittella",
+      "A smart job application tracker that organises every stage of your pipeline — applied, screened, interviewed, offered. Clear visual status boards so nothing falls through the cracks.",
+    stack: ["Python", "SQLite", "Flask", "HTML/CSS"],
+    github: "https://github.com/KrishnaChittella/job-application-tracker",
     status: "live",
     accent: "cyan",
+    year: "2024",
   },
   {
-    id: "neural-viz",
-    title: "NeuralViz",
+    id: "cinematch",
+    title: "CineMatch",
+    subtitle: "Movie Recommendation Engine",
     description:
-      "An interactive tool to visualize neural network architectures and their training dynamics. Built to demystify how deep learning models actually learn, layer by layer.",
-    stack: ["Python", "PyTorch", "React", "D3.js", "FastAPI"],
-    github: "https://github.com/krishnachittella",
+      "Content-based movie recommender built using TF-IDF vectorization and cosine similarity. Enter a title and get curated suggestions ranked by feature overlap — genres, cast, and keywords.",
+    stack: ["Python", "Pandas", "Scikit-learn", "NLTK"],
+    github: "https://github.com/KrishnaChittella/Simple-Movie-Recommender",
     status: "live",
     accent: "pink",
+    year: "2023",
   },
   {
-    id: "stacksurge",
-    title: "StackSurge",
+    id: "visiondigits",
+    title: "VisionDigits",
+    subtitle: "Digit Recognition Engine",
     description:
-      "A full-stack boilerplate with authentication, database integration, and CI/CD wired up from the start. Built to go from idea to production without the scaffolding tax.",
-    stack: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Tailwind CSS"],
-    github: "https://github.com/krishnachittella",
-    live: "#",
+      "A convolutional neural network trained on MNIST achieving 99%+ accuracy. Explores filter visualisation and activation maps to explain what the model is actually learning at each layer.",
+    stack: ["Python", "TensorFlow", "Keras", "NumPy", "Matplotlib"],
+    github: "https://github.com/KrishnaChittella/MNIST_CNN",
     status: "live",
     accent: "yellow",
+    year: "2023",
   },
   {
-    id: "sentinel",
-    title: "Sentinel",
+    id: "classic-classifier",
+    title: "Classic Classifier Lab",
+    subtitle: "Classification with SVM",
     description:
-      "A lightweight observability layer for microservices. Tracks metrics, traces, and anomalies without requiring a full APM stack — designed for lean production environments.",
-    stack: ["Go", "Prometheus", "Grafana", "Docker", "gRPC"],
-    github: "https://github.com/krishnachittella",
-    status: "wip",
+      "A rigorous exploration of Support Vector Machines — kernel tricks, hyperparameter tuning with grid search, and boundary visualisation. A clean reference implementation for classical ML classification.",
+    stack: ["Python", "Scikit-learn", "Pandas", "Seaborn"],
+    github: "https://github.com/KrishnaChittella/Classification-SVM",
+    status: "live",
     accent: "cyan",
+    year: "2023",
+  },
+  {
+    id: "falcon-landing",
+    title: "Falcon Landing Intelligence",
+    subtitle: "SpaceX Landing Optimisation",
+    description:
+      "Predictive modelling on SpaceX Falcon 9 landing outcome data. Applies logistic regression, decision trees, and random forests to understand which mission parameters most affect landing success.",
+    stack: ["Python", "Pandas", "Scikit-learn", "Plotly", "SQL"],
+    github: "https://github.com/KrishnaChittella/OptimizingSpaceXFalconLandings",
+    status: "live",
+    accent: "pink",
+    year: "2024",
+  },
+  {
+    id: "graphmind",
+    title: "GraphMind",
+    subtitle: "Neural Graph Exploration",
+    description:
+      "A deep-dive into Graph Neural Networks — node classification, link prediction, and graph-level tasks with GCN, GAT, and GraphSAGE architectures. Built to understand the theory through implementation.",
+    stack: ["Python", "PyTorch Geometric", "NetworkX", "PyTorch"],
+    github: "https://github.com/KrishnaChittella/Understanding-Graph-Neural-Networks",
+    status: "live",
+    accent: "yellow",
+    year: "2024",
   },
 ];
 
@@ -60,6 +93,7 @@ export const projects: Project[] = [
 export interface Experiment {
   id: string;
   title: string;
+  subtitle: string;
   description: string;
   tags: string[];
   status: "active" | "wip" | "idea";
@@ -69,60 +103,55 @@ export interface Experiment {
 
 export const experiments: Experiment[] = [
   {
+    id: "pulsetrade",
+    title: "PulseTrade",
+    subtitle: "Real-Time Stock Trading Simulator",
+    description:
+      "A paper trading simulator with live market data feeds. Supports order types, portfolio tracking, P&L calculation, and replay mode for backtesting strategies against historical data.",
+    tags: ["WebSockets", "React", "FastAPI", "PostgreSQL", "Redis"],
+    status: "wip",
+    accent: "cyan",
+  },
+  {
+    id: "taxforge",
+    title: "TaxForge",
+    subtitle: "Tax Calculation Engine",
+    description:
+      "A modular tax calculation engine built for accuracy and explainability. Handles multiple tax brackets, deductions, filing statuses, and generates a full breakdown of how the final number was reached.",
+    tags: ["Python", "FastAPI", "TypeScript", "React"],
+    status: "wip",
+    accent: "pink",
+  },
+  {
+    id: "quantmind",
+    title: "QuantMind AI",
+    subtitle: "Financial Intelligence System",
+    description:
+      "An AI-driven financial analysis layer that processes earnings reports, news sentiment, and macro indicators to surface actionable signals. Not financial advice — financial understanding.",
+    tags: ["LLM", "Python", "LangChain", "Pandas", "FastAPI"],
+    status: "idea",
+    accent: "yellow",
+  },
+  {
+    id: "codearena",
+    title: "CodeArena",
+    subtitle: "Algorithm Visualisation Platform",
+    description:
+      "Step through sorting, graph traversal, dynamic programming, and tree algorithms in real time. Each step is animated with state callouts — built to make abstract algorithms feel physical.",
+    tags: ["React", "TypeScript", "Framer Motion", "D3.js"],
+    status: "idea",
+    accent: "cyan",
+  },
+  {
     id: "llm-prompt-engine",
-    title: "LLM Prompt Engine",
+    title: "Prompt Forge",
+    subtitle: "LLM Prompt Management Layer",
     description:
-      "A structured prompt management layer for LLM applications. Supports versioning, variable injection, and A/B testing of prompt templates across different models.",
-    tags: ["LLM", "Python", "FastAPI", "Redis"],
+      "Structured prompt versioning, variable injection, and A/B testing across different LLM providers. Built for teams who treat prompts like code — with diffs, rollbacks, and evaluation pipelines.",
+    tags: ["LLM", "Python", "FastAPI", "Redis", "OpenAI"],
     status: "active",
-    accent: "cyan",
-    link: "https://github.com/krishnachittella",
-  },
-  {
-    id: "realtime-dash",
-    title: "LivePulse Dashboard",
-    description:
-      "A real-time data visualization dashboard that connects to WebSocket streams and renders live metrics with smooth, animated chart updates.",
-    tags: ["WebSockets", "React", "D3.js", "TypeScript"],
-    status: "wip",
     accent: "pink",
-    link: "https://github.com/krishnachittella",
-  },
-  {
-    id: "terminal-ui",
-    title: "TermKit UI",
-    description:
-      "A terminal-inspired component library for the web. Clean, mono aesthetic that actually works in production — not a gimmick. Inspired by developer tools and CLI interfaces.",
-    tags: ["React", "TypeScript", "Tailwind", "Storybook"],
-    status: "wip",
-    accent: "yellow",
-  },
-  {
-    id: "local-llm-router",
-    title: "Local LLM Router",
-    description:
-      "A routing layer that intelligently dispatches prompts between local models (Ollama) and cloud APIs based on complexity, cost thresholds, and latency requirements.",
-    tags: ["Ollama", "LangChain", "Python", "OpenAI"],
-    status: "idea",
-    accent: "cyan",
-  },
-  {
-    id: "data-contracts",
-    title: "Schema Sentinel",
-    description:
-      "A contract-testing tool for data pipelines. Validates that upstream schema changes don't silently break downstream consumers — before they hit production.",
-    tags: ["Python", "dbt", "Great Expectations", "Kafka"],
-    status: "idea",
-    accent: "pink",
-  },
-  {
-    id: "3d-portfolio",
-    title: "3D Spatial Portfolio",
-    description:
-      "An experimental 3D environment built with Three.js where portfolio items exist as navigable objects in 3D space. More of an art project than a practical site.",
-    tags: ["Three.js", "React Three Fiber", "GLSL", "WebGL"],
-    status: "idea",
-    accent: "yellow",
+    link: "https://github.com/KrishnaChittella",
   },
 ];
 
@@ -136,146 +165,180 @@ export interface TimelineEntry {
   body: string;
   tags: string[];
   accent: "cyan" | "pink" | "yellow";
+  highlight?: string;
 }
 
 export const timeline: TimelineEntry[] = [
   {
-    id: "ai-ml",
+    id: "btech",
     era: "Chapter 01",
-    period: "2020 — 2022",
-    title: "AI & Machine Learning",
+    period: "2018 — 2022",
+    title: "BTech & First Contact with ML",
     body:
-      "Started with a deep curiosity about how machines learn. Explored supervised learning, neural networks, NLP, and computer vision. Built models, read papers, and got comfortable living inside the math. This phase taught me how to think precisely about problems and validated a love for building systems that adapt.",
-    tags: ["Python", "TensorFlow", "PyTorch", "Scikit-learn", "NLP", "Computer Vision"],
+      "Four years of engineering fundamentals — algorithms, data structures, systems programming in C++. Discovered machine learning midway through and became obsessed. Started applying ML concepts to real datasets, grinding LeetCode, and building the first real project: a stock market prediction model using K-Nearest Neighbours.",
+    tags: ["C++", "Algorithms", "Python", "KNN", "LeetCode", "Stock Market Prediction"],
     accent: "cyan",
+    highlight: "Project: Stock Market Prediction using KNN",
+  },
+  {
+    id: "tcs",
+    era: "Chapter 02",
+    period: "2022 — 2023",
+    title: "Software Engineer @ TCS",
+    body:
+      "First real exposure to production systems and enterprise software. Working at scale changed how I think about code — reliability, observability, and maintainability stopped being theoretical. The gap between university projects and production systems was larger than expected, and learning to close that gap was the most valuable thing this year taught me.",
+    tags: ["Enterprise Software", "Production Systems", "Team Collaboration", "Agile"],
+    accent: "pink",
+    highlight: "Tata Consultancy Services",
+  },
+  {
+    id: "masters",
+    era: "Chapter 03",
+    period: "2023 — 2024",
+    title: "Master's Degree — AI/ML Focus",
+    body:
+      "Went deeper on the theory side — advanced ML, deep learning architectures, NLP, computer vision. Built VisionDigits (MNIST CNN), CineMatch (recommendation systems), Falcon Landing Intelligence (predictive modelling on SpaceX data), and GraphMind (GNN exploration). This year was about depth: going from knowing ML techniques to understanding why they work.",
+    tags: ["Deep Learning", "CNNs", "NLP", "Recommendation Systems", "PyTorch", "Research"],
+    accent: "yellow",
+    highlight: "MSc — Advanced AI/ML Projects",
   },
   {
     id: "data-engineering",
-    era: "Chapter 02",
-    period: "2022 — 2023",
-    title: "Data Engineering",
-    body:
-      "Realized that models are only as good as the data flowing into them. Moved into the engineering side — building pipelines that move, transform, and serve data reliably at scale. Kafka, Spark, Airflow, cloud warehouses. Learned that production is humbling, and that good architecture outlasts good ideas.",
-    tags: ["Apache Kafka", "Apache Spark", "Airflow", "dbt", "Snowflake", "Docker"],
-    accent: "pink",
-  },
-  {
-    id: "full-stack",
-    era: "Chapter 03",
-    period: "2023 — Present",
-    title: "Full-Stack Development",
-    body:
-      "Wanted to build things people could actually touch. Moved into the full stack — React, Next.js, TypeScript, backend APIs, databases, deployment. There's something deeply satisfying about controlling the entire experience from a design decision to a deployed product. This is where I am now, and the domain I'm most actively building in.",
-    tags: ["Next.js", "TypeScript", "React", "Node.js", "PostgreSQL", "Tailwind CSS"],
-    accent: "yellow",
-  },
-  {
-    id: "future",
     era: "Chapter 04",
-    period: "2025 — ∞",
-    title: "Future Exploration",
+    period: "2025",
+    title: "Exploring Data Engineering",
     body:
-      "The next chapter isn't defined yet, and that's the point. Whether it's distributed systems, applied AI at the product layer, developer tooling, or something that doesn't have a name yet — the commitment is to keep building, keep exploring, and stay curious enough to follow the next interesting problem.",
-    tags: ["Systems Design", "Applied AI", "Open Source", "Developer Tools"],
+      "Realised that production AI lives downstream of good data infrastructure. Started exploring the data engineering layer — pipelines, orchestration, transformation, and warehousing. Understanding how data moves and transforms before it ever reaches a model changed the way I think about end-to-end ML systems.",
+    tags: ["Apache Kafka", "dbt", "Airflow", "SQL", "Data Pipelines", "ETL"],
     accent: "cyan",
+    highlight: "The infrastructure layer of AI",
+  },
+  {
+    id: "fullstack",
+    era: "Chapter 05",
+    period: "2025 — Present",
+    title: "Java Full-Stack Development",
+    body:
+      "The current chapter: building complete products from the ground up. Java on the backend, React and Next.js on the frontend. Learning to own the entire stack — not just write features, but architect, deploy, and maintain systems. InboxSignal was the first real full-stack build. There's more incoming.",
+    tags: ["Java", "Spring Boot", "Next.js", "React", "TypeScript", "PostgreSQL", "REST APIs"],
+    accent: "pink",
+    highlight: "Currently active",
   },
 ];
 
-// ─── Blog ─────────────────────────────────────────────────────────────────────
+// ─── Journal ──────────────────────────────────────────────────────────────────
 
-export interface BlogPost {
+export interface JournalEntry {
   id: string;
+  type: "listening" | "exploring" | "writing";
   title: string;
-  excerpt: string;
+  subtitle?: string;
+  body: string;
   date: string;
-  readTime: string;
+  link?: string;
   tags: string[];
-  slug: string;
 }
 
-export const blogPosts: BlogPost[] = [
+export const journalEntries: JournalEntry[] = [
   {
-    id: "1",
-    title: "From Models to Pipelines: What Data Engineering Actually Taught Me",
-    excerpt:
+    id: "fiserv-rpa",
+    type: "listening",
+    title: "Jami DeHaven — Fiserv RPA Podcast",
+    subtitle: "Robotic Process Automation in Enterprise",
+    body:
+      "DeHaven breaks down how RPA is being deployed at financial scale — the actual implementation challenges, change management, and where the technology genuinely delivers vs where it gets oversold. Practical and grounded.",
+    date: "Mar 2025",
+    link: "#",
+    tags: ["RPA", "Automation", "Fintech", "Enterprise"],
+  },
+  {
+    id: "llm-infrastructure",
+    type: "exploring",
+    title: "The LLM Infrastructure Gap",
+    subtitle: "What production AI actually needs",
+    body:
+      "Most LLM demos skip the hard part: evaluation, versioning, cost control, and latency at scale. Exploring what a real production AI stack looks like — not the notebook, but the plumbing that makes it reliable.",
+    date: "Mar 2025",
+    tags: ["LLM", "MLOps", "Infrastructure", "AI"],
+  },
+  {
+    id: "data-contracts",
+    type: "exploring",
+    title: "Data Contracts & Schema Evolution",
+    subtitle: "Why upstream changes silently break downstream",
+    body:
+      "Downstream consumers break when upstream schemas change without notice. Exploring contract testing for data pipelines — tools like Great Expectations, dbt tests, and how to enforce schema agreements across teams.",
+    date: "Feb 2025",
+    tags: ["Data Engineering", "dbt", "Schema", "Testing"],
+  },
+  {
+    id: "from-models-to-pipelines",
+    type: "writing",
+    title: "From Models to Pipelines",
+    subtitle: "What data engineering actually taught me",
+    body:
       "Moving from ML to data engineering felt like switching languages. Here's what changed about how I think about software when reliability replaces accuracy as the primary metric.",
     date: "Feb 2025",
-    readTime: "7 min read",
     tags: ["Data Engineering", "Reflection"],
-    slug: "from-models-to-pipelines",
   },
   {
-    id: "2",
-    title: "Why I Build Things Nobody Asked For",
-    excerpt:
-      "Most of my best projects started without a brief. There's a specific kind of learning that only happens when you're building for curiosity rather than a spec — and it compounds.",
-    date: "Jan 2025",
-    readTime: "5 min read",
-    tags: ["Building", "Philosophy"],
-    slug: "building-for-curiosity",
-  },
-  {
-    id: "3",
+    id: "typescript-backend",
+    type: "writing",
     title: "The Quiet Power of TypeScript for Backend Engineers",
-    excerpt:
+    subtitle: "",
+    body:
       "I resisted TypeScript for too long. Then I used it on a real project with real data contracts and real team coordination. Here's why I won't go back.",
-    date: "Dec 2024",
-    readTime: "6 min read",
-    tags: ["TypeScript", "Backend", "Engineering"],
-    slug: "typescript-for-backend",
+    date: "Jan 2025",
+    tags: ["TypeScript", "Backend"],
   },
 ];
 
-// ─── Beyond Code ──────────────────────────────────────────────────────────────
+// ─── Beyond Code — Gaming ─────────────────────────────────────────────────────
 
-export interface Interest {
+export interface Game {
   title: string;
+  note?: string;
+}
+
+export interface GameCategory {
+  id: string;
+  label: string;
   description: string;
-  icon: string;
+  games: Game[];
   accent: "cyan" | "pink" | "yellow";
 }
 
-export const interests: Interest[] = [
+export const gameCategories: GameCategory[] = [
   {
-    title: "Cyberpunk 2077",
-    description:
-      "The game that inspired this site's visual language. Night City isn't just a setting — it's a masterclass in world-building, contrast, and atmospheric design. The way it layers neon, grime, and technology is endlessly interesting.",
-    icon: "◈",
+    id: "primary",
+    label: "Primary",
+    description: "The ones I keep coming back to. Polished, demanding, and deeply built.",
+    games: [
+      { title: "Red Dead Redemption 2", note: "Unmatched world detail" },
+      { title: "Escape From Tarkov", note: "High stakes, no hand-holding" },
+      { title: "Rainbow Six Siege", note: "Tactical depth, fast thinking" },
+    ],
     accent: "pink",
   },
   {
-    title: "Systems Thinking",
-    description:
-      "Obsessed with how systems — technical or otherwise — behave emergently. Reading about feedback loops, complex adaptive systems, and why things fail in unexpected ways is a persistent hobby.",
-    icon: "◎",
-    accent: "cyan",
-  },
-  {
-    title: "PC Building & Hardware",
-    description:
-      "There's something grounding about working with physical components. Understanding the hardware layer makes software abstractions feel more real. Also, cable management is a legitimate art form.",
-    icon: "◧",
+    id: "strategy",
+    label: "Strategy / Economy",
+    description: "Systems games. The kind that reward patience and long-term thinking.",
+    games: [
+      { title: "Anno 1800", note: "Production chains & city planning" },
+      { title: "Cities: Skylines", note: "Urban systems thinking" },
+    ],
     accent: "yellow",
   },
   {
-    title: "Ambient & Electronic Music",
-    description:
-      "Mostly Aphex Twin, Jon Hopkins, and soundscapes with no lyrics. Music that doesn't demand attention but rewards it. Works well for long coding sessions where you need flow without distraction.",
-    icon: "◉",
-    accent: "pink",
-  },
-  {
-    title: "Open Source Exploration",
-    description:
-      "Reading production codebases is a hobby. You learn more from a mature open source project's commit history than from most tutorials. Watching how real decisions got made and reversed is fascinating.",
-    icon: "◈",
+    id: "extraction",
+    label: "Extraction / Survival",
+    description: "High pressure, sparse resources. The tension is the game.",
+    games: [
+      { title: "Rust", note: "Brutal and social" },
+      { title: "The Division 2", note: "Atmosphere and gunplay" },
+      { title: "PUBG", note: "The original tension loop" },
+    ],
     accent: "cyan",
-  },
-  {
-    title: "Cities & Urban Design",
-    description:
-      "Why do some cities feel alive and others feel empty? Urban density, walkability, informal economies, and how physical space shapes human behavior — the kind of systems thinking that doesn't involve a computer.",
-    icon: "◎",
-    accent: "yellow",
   },
 ];

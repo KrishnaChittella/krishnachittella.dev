@@ -83,10 +83,13 @@ export default function ExperimentCard({ experiment, index }: ExperimentCardProp
 
       {/* Title */}
       <h3
-        className={`font-orbitron text-base font-bold text-text-primary mb-2 transition-colors duration-200 ${a.title}`}
+        className={`font-orbitron text-base font-bold text-text-primary mb-0.5 transition-colors duration-200 ${a.title}`}
       >
         {experiment.title}
       </h3>
+      {experiment.subtitle && (
+        <p className="text-text-muted text-[10px] tracking-wide mb-2">{experiment.subtitle}</p>
+      )}
 
       {/* Description */}
       <p className="text-text-muted text-sm leading-relaxed mb-4">

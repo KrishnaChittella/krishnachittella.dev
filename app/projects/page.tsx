@@ -5,19 +5,19 @@ import { projects } from "@/lib/data";
 
 export const metadata = {
   title: "Projects — Krishna Chittella",
-  description: "Selected projects across AI/ML, Data Engineering, and Full-Stack Development.",
+  description: "AI/ML, data science, and full-stack projects by Krishna Chittella.",
 };
 
-const upcomingSlots = [
+const incomingBuilds = [
   {
-    title: "Untitled Project",
-    hint: "Something in distributed systems. In the research phase.",
-    accent: "pink" as const,
+    title: "Incoming Build",
+    hint: "A full-stack product in active development. Details soon.",
+    accent: "cyan" as const,
   },
   {
-    title: "Untitled Project",
-    hint: "Exploring applied AI at the product layer. Early concept.",
-    accent: "yellow" as const,
+    title: "Incoming Build",
+    hint: "Something in the data space. Architecture phase.",
+    accent: "pink" as const,
   },
 ];
 
@@ -31,7 +31,7 @@ export default function ProjectsPage() {
         <SectionHeader
           eyebrow="Work"
           title="Projects"
-          subtitle="Things built with intent. Each one a step toward understanding a domain more completely."
+          subtitle="Real builds — from ML models and data science to full-stack applications. Each one a step toward understanding a domain more completely."
           accent="cyan"
         />
 
@@ -47,7 +47,7 @@ export default function ProjectsPage() {
           </div>
         </div>
 
-        {/* WIP projects */}
+        {/* WIP */}
         {wipProjects.length > 0 && (
           <div className="mb-16">
             <p className="font-orbitron text-xs font-semibold tracking-[0.2em] uppercase text-text-muted mb-6">
@@ -61,31 +61,34 @@ export default function ProjectsPage() {
           </div>
         )}
 
-        {/* Upcoming slots — intentional placeholders */}
+        {/* Incoming builds — intentional placeholders */}
         <div>
           <p className="font-orbitron text-xs font-semibold tracking-[0.2em] uppercase text-text-muted mb-6">
-            On the Horizon
+            Incoming Builds
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {upcomingSlots.map((slot, i) => (
+            {incomingBuilds.map((slot, i) => (
               <div
                 key={i}
-                className="relative panel-base rounded-lg p-6 border border-dashed border-white/10"
+                className="relative panel-base rounded-lg p-6 border border-dashed border-white/8 group hover:border-white/15 transition-colors duration-300"
               >
-                <div className="flex items-center gap-2 mb-4">
-                  <span
-                    className={`w-1.5 h-1.5 rounded-full ${
-                      slot.accent === "pink" ? "bg-neon-pink/40" : "bg-neon-yellow/40"
-                    }`}
-                  />
-                  <span className="text-text-muted text-xs tracking-wider uppercase">
+                <div className="flex items-center gap-2 mb-5">
+                  <span className={`w-1.5 h-1.5 rounded-full opacity-40 ${
+                    slot.accent === "cyan" ? "bg-neon-cyan" : "bg-neon-pink"
+                  }`} />
+                  <span className="text-text-muted/60 text-[10px] font-orbitron tracking-[0.2em] uppercase">
                     Upcoming
                   </span>
                 </div>
-                <h3 className="font-orbitron text-lg font-bold text-white/20 mb-3">
+                <h3 className="font-orbitron text-lg font-bold text-white/15 mb-3">
                   {slot.title}
                 </h3>
-                <p className="text-text-muted/60 text-sm italic">{slot.hint}</p>
+                <p className="text-text-muted/50 text-sm italic">{slot.hint}</p>
+                <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <span className={`font-orbitron text-[9px] tracking-[0.2em] uppercase ${
+                    slot.accent === "cyan" ? "text-neon-cyan/40" : "text-neon-pink/40"
+                  }`}>Soon</span>
+                </div>
               </div>
             ))}
           </div>

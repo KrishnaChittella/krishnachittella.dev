@@ -8,10 +8,10 @@ import { motion, AnimatePresence } from "motion/react";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/projects", label: "Projects" },
-  { href: "/experiments", label: "Experiments" },
+  { href: "/experiments", label: "Lab" },
   { href: "/journey", label: "Journey" },
   { href: "/beyond-code", label: "Beyond Code" },
-  { href: "/blog", label: "Blog" },
+  { href: "/journal", label: "Journal" },
   { href: "/contact", label: "Contact" },
 ];
 

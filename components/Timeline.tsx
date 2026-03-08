@@ -73,9 +73,14 @@ export default function Timeline({ entries }: TimelineProps) {
                     <span className="text-text-muted text-xs">{entry.period}</span>
                   </div>
 
-                  <h3 className="font-orbitron text-xl font-bold text-text-primary mb-3">
+                  <h3 className="font-orbitron text-xl font-bold text-text-primary mb-1">
                     {entry.title}
                   </h3>
+                  {entry.highlight && (
+                    <p className={`font-orbitron text-[10px] font-semibold tracking-[0.18em] uppercase mb-4 ${a.era}`}>
+                      {entry.highlight}
+                    </p>
+                  )}
 
                   <p className="text-text-muted text-sm leading-relaxed mb-5">{entry.body}</p>
 

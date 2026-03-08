@@ -84,9 +84,12 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       </div>
 
       {/* Title */}
-      <h3 className="font-orbitron text-lg font-bold text-text-primary mb-3 leading-snug">
+      <h3 className="font-orbitron text-lg font-bold text-text-primary mb-0.5 leading-snug">
         {project.title}
       </h3>
+      {project.subtitle && (
+        <p className="text-text-muted text-xs tracking-wide mb-3">{project.subtitle}</p>
+      )}
 
       {/* Description */}
       <p className="text-text-muted text-sm leading-relaxed mb-6">

@@ -1,16 +1,16 @@
 import Link from "next/link";
 
-const links = [
-  { href: "https://github.com/krishnachittella", label: "GitHub" },
-  { href: "https://linkedin.com/in/krishnachittella", label: "LinkedIn" },
+const socialLinks = [
+  { href: "https://github.com/KrishnaChittella", label: "GitHub" },
+  { href: "https://instagram.com/itsme_krishnachittella", label: "Instagram" },
   { href: "mailto:hello@krishnachittella.dev", label: "Email" },
 ];
 
 const navLinks = [
   { href: "/projects", label: "Projects" },
-  { href: "/experiments", label: "Experiments" },
+  { href: "/experiments", label: "The Lab" },
   { href: "/journey", label: "Journey" },
-  { href: "/blog", label: "Blog" },
+  { href: "/journal", label: "Journal" },
 ];
 
 export default function Footer() {
@@ -27,7 +27,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-text-muted text-sm leading-relaxed max-w-xs">
-              Builder · Explorer · Engineer. Always curious, always building.
+              Code · Systems · Curiosity. Always exploring, always building.
             </p>
           </div>
 
@@ -56,11 +56,11 @@ export default function Footer() {
               Connect
             </p>
             <ul className="space-y-2">
-              {links.map((l) => (
+              {socialLinks.map((l) => (
                 <li key={l.href}>
                   <a
                     href={l.href}
-                    target="_blank"
+                    target={l.href.startsWith("mailto") ? undefined : "_blank"}
                     rel="noopener noreferrer"
                     className="text-sm text-text-muted hover:text-neon-cyan transition-colors duration-200"
                   >
