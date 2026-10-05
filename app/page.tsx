@@ -223,7 +223,7 @@ export default function HomePage() {
               </Link>
             </div>
             <div className="grid grid-cols-2 gap-3">
-              {["PulseTrade", "TaxForge", "QuantMind AI", "CodeArena"].map((name, i) => (
+              {["PulseTrade", "TaxForge", "QuantMind AI", "CodeArena"].map((name) => (
                 <div key={name} className="p-4 rounded-md bg-white/3 border border-neon-pink/10">
                   <span className="w-1.5 h-1.5 rounded-full bg-neon-pink/50 block mb-2" />
                   <p className="font-orbitron text-xs font-bold text-text-primary">{name}</p>
