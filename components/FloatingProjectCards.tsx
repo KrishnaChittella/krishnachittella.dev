@@ -56,18 +56,6 @@ const accentColors = {
   },
 };
 
-const floatVariants = {
-  animate: (i: number) => ({
-    y: [0, -10, 0],
-    transition: {
-      duration: 3.5 + i * 0.6,
-      repeat: Infinity,
-      ease: "easeInOut",
-      delay: i * 0.4,
-    },
-  }),
-};
-
 export default function FloatingProjectCards() {
   return (
     <div className="relative w-full h-80 hidden lg:block">
