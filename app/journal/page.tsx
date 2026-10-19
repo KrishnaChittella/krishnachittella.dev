@@ -77,7 +77,7 @@ export default function JournalPage() {
 
         {/* Sections */}
         <div className="space-y-20">
-          {sections.map((section, si) => {
+          {sections.map((section) => {
             const entries = journalEntries.filter((e) => e.type === section.type);
             const cfg = typeConfig[section.type];
 
