@@ -30,3 +30,9 @@ npm-debug.log*
 
 # Claude
 .claude/
+
+# Local tool output and caches (keep .impeccable/config.json, the shared detector config)
+.taste-skill/
+.playwright-cli/
+.impeccable/hook.cache.json
+.impeccable/config.local.json
