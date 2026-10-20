@@ -33,10 +33,11 @@ npm ci
 ## Project layout
 
 ```
-app/          Routes, root layout, global CSS
-components/   Shared UI components
-lib/data.ts   Site content (projects, experiments, timeline, journal)
-public/       Static files copied into the export (CNAME, robots.txt)
+app/(portfolio)/   Portfolio (light site), served at /
+app/(playground)/  Playground (dark site), served at /playground
+components/        Shared UI components
+lib/data.ts        All site copy: experience, projects, apps, games
+public/            Static files (CNAME, robots.txt, résumé PDF, images)
 ```
 
 ## CI and deployment

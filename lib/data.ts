@@ -1,299 +1,266 @@
-// ─── Projects ─────────────────────────────────────────────────────────────────
+// All site copy. Every claim here was confirmed by Krishna; add nothing unverified.
 
-export interface Project {
-  id: string;
+export const profile = {
+  name: "Lakshmi Varaha Krishna Chittella",
+  role: "Data engineer",
+  summary:
+    "I build and monitor data pipelines on AWS and GCP. Master's in Computer Science from the University of South Dakota. Looking for data engineering, analytics and ML engineering roles in the US.",
+  email: "krishna.chittella@gmail.com",
+  github: "https://github.com/KrishnaChittella",
+  linkedin: "https://www.linkedin.com/in/lakshmi-varaha-krishna-chittella/",
+  instagram: "https://instagram.com/itsme_krishnachittella",
+  resume: "/Lakshmi-Varaha-Krishna-Chittella-Resume.pdf",
+};
+
+export interface Job {
+  company: string;
+  place?: string;
   title: string;
-  subtitle: string;
-  description: string;
-  stack: string[];
-  github?: string;
-  live?: string;
-  status: "live" | "wip" | "upcoming";
-  accent: "cyan" | "pink" | "yellow";
-  year?: string;
-}
-
-export const projects: Project[] = [
-  {
-    id: "inboxsignal",
-    title: "InboxSignal",
-    subtitle: "Job Pipeline Tracker",
-    description:
-      "A smart job application tracker that organises every stage of your pipeline — applied, screened, interviewed, offered. Clear visual status boards so nothing falls through the cracks.",
-    stack: ["Python", "SQLite", "Flask", "HTML/CSS"],
-    github: "https://github.com/KrishnaChittella/job-application-tracker",
-    status: "live",
-    accent: "cyan",
-    year: "2024",
-  },
-  {
-    id: "cinematch",
-    title: "CineMatch",
-    subtitle: "Movie Recommendation Engine",
-    description:
-      "Content-based movie recommender built using TF-IDF vectorization and cosine similarity. Enter a title and get curated suggestions ranked by feature overlap — genres, cast, and keywords.",
-    stack: ["Python", "Pandas", "Scikit-learn", "NLTK"],
-    github: "https://github.com/KrishnaChittella/Simple-Movie-Recommender",
-    status: "live",
-    accent: "pink",
-    year: "2023",
-  },
-  {
-    id: "visiondigits",
-    title: "VisionDigits",
-    subtitle: "Digit Recognition Engine",
-    description:
-      "A convolutional neural network trained on MNIST achieving 99%+ accuracy. Explores filter visualisation and activation maps to explain what the model is actually learning at each layer.",
-    stack: ["Python", "TensorFlow", "Keras", "NumPy", "Matplotlib"],
-    github: "https://github.com/KrishnaChittella/MNIST_CNN",
-    status: "live",
-    accent: "yellow",
-    year: "2023",
-  },
-  {
-    id: "classic-classifier",
-    title: "Classic Classifier Lab",
-    subtitle: "Classification with SVM",
-    description:
-      "A rigorous exploration of Support Vector Machines — kernel tricks, hyperparameter tuning with grid search, and boundary visualisation. A clean reference implementation for classical ML classification.",
-    stack: ["Python", "Scikit-learn", "Pandas", "Seaborn"],
-    github: "https://github.com/KrishnaChittella/Classification-SVM",
-    status: "live",
-    accent: "cyan",
-    year: "2023",
-  },
-  {
-    id: "falcon-landing",
-    title: "Falcon Landing Intelligence",
-    subtitle: "SpaceX Landing Optimisation",
-    description:
-      "Predictive modelling on SpaceX Falcon 9 landing outcome data. Applies logistic regression, decision trees, and random forests to understand which mission parameters most affect landing success.",
-    stack: ["Python", "Pandas", "Scikit-learn", "Plotly", "SQL"],
-    github: "https://github.com/KrishnaChittella/OptimizingSpaceXFalconLandings",
-    status: "live",
-    accent: "pink",
-    year: "2024",
-  },
-  {
-    id: "graphmind",
-    title: "GraphMind",
-    subtitle: "Neural Graph Exploration",
-    description:
-      "A deep-dive into Graph Neural Networks — node classification, link prediction, and graph-level tasks with GCN, GAT, and GraphSAGE architectures. Built to understand the theory through implementation.",
-    stack: ["Python", "PyTorch Geometric", "NetworkX", "PyTorch"],
-    github: "https://github.com/KrishnaChittella/Understanding-Graph-Neural-Networks",
-    status: "live",
-    accent: "yellow",
-    year: "2024",
-  },
-];
-
-// ─── Experiments ──────────────────────────────────────────────────────────────
-
-export interface Experiment {
-  id: string;
-  title: string;
-  subtitle: string;
-  description: string;
-  tags: string[];
-  status: "active" | "wip" | "idea";
-  accent: "cyan" | "pink" | "yellow";
-  link?: string;
-}
-
-export const experiments: Experiment[] = [
-  {
-    id: "pulsetrade",
-    title: "PulseTrade",
-    subtitle: "Real-Time Stock Trading Simulator",
-    description:
-      "A paper trading simulator with live market data feeds. Supports order types, portfolio tracking, P&L calculation, and replay mode for backtesting strategies against historical data.",
-    tags: ["WebSockets", "React", "FastAPI", "PostgreSQL", "Redis"],
-    status: "wip",
-    accent: "cyan",
-  },
-  {
-    id: "taxforge",
-    title: "TaxForge",
-    subtitle: "Tax Calculation Engine",
-    description:
-      "A modular tax calculation engine built for accuracy and explainability. Handles multiple tax brackets, deductions, filing statuses, and generates a full breakdown of how the final number was reached.",
-    tags: ["Python", "FastAPI", "TypeScript", "React"],
-    status: "wip",
-    accent: "pink",
-  },
-  {
-    id: "quantmind",
-    title: "QuantMind AI",
-    subtitle: "Financial Intelligence System",
-    description:
-      "An AI-driven financial analysis layer that processes earnings reports, news sentiment, and macro indicators to surface actionable signals. Not financial advice — financial understanding.",
-    tags: ["LLM", "Python", "LangChain", "Pandas", "FastAPI"],
-    status: "idea",
-    accent: "yellow",
-  },
-  {
-    id: "codearena",
-    title: "CodeArena",
-    subtitle: "Algorithm Visualisation Platform",
-    description:
-      "Step through sorting, graph traversal, dynamic programming, and tree algorithms in real time. Each step is animated with state callouts — built to make abstract algorithms feel physical.",
-    tags: ["React", "TypeScript", "Framer Motion", "D3.js"],
-    status: "idea",
-    accent: "cyan",
-  },
-  {
-    id: "llm-prompt-engine",
-    title: "Prompt Forge",
-    subtitle: "LLM Prompt Management Layer",
-    description:
-      "Structured prompt versioning, variable injection, and A/B testing across different LLM providers. Built for teams who treat prompts like code — with diffs, rollbacks, and evaluation pipelines.",
-    tags: ["LLM", "Python", "FastAPI", "Redis", "OpenAI"],
-    status: "active",
-    accent: "pink",
-    link: "https://github.com/KrishnaChittella",
-  },
-];
-
-// ─── Journey / Timeline ───────────────────────────────────────────────────────
-
-export interface TimelineEntry {
-  id: string;
-  era: string;
   period: string;
-  title: string;
-  body: string;
-  tags: string[];
-  accent: "cyan" | "pink" | "yellow";
-  highlight?: string;
+  bullets: string[];
+  stack?: string;
 }
 
-export const timeline: TimelineEntry[] = [
+export const experience: Job[] = [
   {
-    id: "btech",
-    era: "Chapter 01",
-    period: "2018 — 2022",
-    title: "BTech & First Contact with ML",
-    body:
-      "Four years of engineering fundamentals — algorithms, data structures, systems programming in C++. Discovered machine learning midway through and became obsessed. Started applying ML concepts to real datasets, grinding LeetCode, and building the first real project: a stock market prediction model using K-Nearest Neighbours.",
-    tags: ["C++", "Algorithms", "Python", "KNN", "LeetCode", "Stock Market Prediction"],
-    accent: "cyan",
-    highlight: "Project: Stock Market Prediction using KNN",
+    company: "Softtechers LLC",
+    title: "Software Engineer I",
+    period: "Dec 2025 – Present",
+    bullets: [
+      "Contributed to a confidential enterprise case-management platform built with Java, Spring Boot, microservices, MongoDB and Apache Kafka.",
+      "Worked with containerized services and used Prometheus and New Relic for monitoring and troubleshooting during client work.",
+      "Built Briefcase, a Spring Boot and PostgreSQL case-management app, and a job application tracker with React and Outlook status updates through Microsoft Graph. Both were supervised skills assessments.",
+    ],
+    stack:
+      "Java, Spring Boot, microservices, Apache Kafka, MongoDB, Docker, Kubernetes, Node.js, Prometheus, New Relic, GitLab CI/CD, Git",
   },
   {
-    id: "tcs",
-    era: "Chapter 02",
-    period: "2022 — 2023",
-    title: "Software Engineer @ TCS",
-    body:
-      "First real exposure to production systems and enterprise software. Working at scale changed how I think about code — reliability, observability, and maintainability stopped being theoretical. The gap between university projects and production systems was larger than expected, and learning to close that gap was the most valuable thing this year taught me.",
-    tags: ["Enterprise Software", "Production Systems", "Team Collaboration", "Agile"],
-    accent: "pink",
-    highlight: "Tata Consultancy Services",
+    company: "TechRoots Inc.",
+    title: "Data Engineer",
+    period: "Jan 2025 – Dec 2025",
+    bullets: [
+      "Monitored and supported three to four client ETL/ELT pipelines on AWS: investigated CloudWatch alerts, traced failures and fixed issues with the technical lead's guidance.",
+      "Investigated Kafka ingestion interruptions under heavy load and helped rework data sourcing to restore the pipeline's data flow.",
+      "Reviewed execution plans for slow transformations, then tuned computation and storage access and partitioned data to reduce bottlenecks.",
+      "Handled upstream feeds that arrived about three hours late with incremental, partitioned backfills instead of full reloads.",
+      "Recovered three missed days of daily batch aggregations after an expired API token stalled retries. Chose sequential or parallel catch-up runs from the job dependencies, watched cluster memory and query concurrency, and reconciled source and destination record counts for each date.",
+      "Applied GCP pipeline and Python/PySpark training to the work and took part in recurring sprint-based troubleshooting.",
+    ],
+    stack:
+      "AWS (Kafka, Kinesis, S3, DynamoDB, Lambda, Glue, EMR, EC2, IAM, CloudWatch), GCP, PySpark, ETL/ELT, GitLab CI/CD",
   },
   {
-    id: "masters",
-    era: "Chapter 03",
-    period: "2023 — 2024",
-    title: "Master's Degree — AI/ML Focus",
-    body:
-      "Went deeper on the theory side — advanced ML, deep learning architectures, NLP, computer vision. Built VisionDigits (MNIST CNN), CineMatch (recommendation systems), Falcon Landing Intelligence (predictive modelling on SpaceX data), and GraphMind (GNN exploration). This year was about depth: going from knowing ML techniques to understanding why they work.",
-    tags: ["Deep Learning", "CNNs", "NLP", "Recommendation Systems", "PyTorch", "Research"],
-    accent: "yellow",
-    highlight: "MSc — Advanced AI/ML Projects",
+    company: "USD Campus Retail Food Services",
+    title: "Student Lead",
+    period: "Aug 2024 – Dec 2024",
+    bullets: [
+      "Led the student team after working part-time in the stores since Aug 2023.",
+      "Checked inventory, ordered supplies and trained new staff.",
+      "Shared service-demand observations with managers, such as when rush hours hit and when it went quiet.",
+    ],
   },
   {
-    id: "data-engineering",
-    era: "Chapter 04",
-    period: "2025",
-    title: "Exploring Data Engineering",
-    body:
-      "Realised that production AI lives downstream of good data infrastructure. Started exploring the data engineering layer — pipelines, orchestration, transformation, and warehousing. Understanding how data moves and transforms before it ever reaches a model changed the way I think about end-to-end ML systems.",
-    tags: ["Apache Kafka", "dbt", "Airflow", "SQL", "Data Pipelines", "ETL"],
-    accent: "cyan",
-    highlight: "The infrastructure layer of AI",
-  },
-  {
-    id: "fullstack",
-    era: "Chapter 05",
-    period: "2025 — Present",
-    title: "Java Full-Stack Development",
-    body:
-      "The current chapter: building complete products from the ground up. Java on the backend, React and Next.js on the frontend. Learning to own the entire stack — not just write features, but architect, deploy, and maintain systems. InboxSignal was the first real full-stack build. There's more incoming.",
-    tags: ["Java", "Spring Boot", "Next.js", "React", "TypeScript", "PostgreSQL", "REST APIs"],
-    accent: "pink",
-    highlight: "Currently active",
+    company: "Tata Consultancy Services",
+    place: "Kolkata, India",
+    title: "Associate Systems Engineer",
+    period: "Oct 2022 – May 2023",
+    bullets: [
+      "Completed foundational Azure cloud training during onboarding, then joined an Axway B2Bi integration project.",
+      "Supported Java application development for the project and was commended for a useful technical insight.",
+    ],
+    stack: "Java, Azure, Axway B2Bi",
   },
 ];
 
-// ─── Journal ──────────────────────────────────────────────────────────────────
+export const education = [
+  {
+    school: "University of South Dakota",
+    place: "Vermillion, SD",
+    degree: "M.S. in Computer Science",
+    period: "Aug 2023 – Dec 2024",
+    note: "GPA 3.6/4.0. Coursework: Machine Learning Fundamentals, Advanced Artificial Intelligence, Computer Vision, Pattern Recognition in Machine Learning, High Performance Computing, AI in Medical Informatics, Internet of Things, Operating Systems and Architecture, Quantum Computing.",
+  },
+  {
+    school: "BVC College of Engineering",
+    place: "Rajahmundry, affiliated with JNTUK",
+    degree: "B.Tech in Computer Science and Engineering",
+    period: "Graduated 2022",
+    note: "",
+  },
+];
 
-export interface JournalEntry {
+export const skills: { group: string; items: string[] }[] = [
+  { group: "Data engineering", items: ["Python", "SQL", "PySpark", "ETL/ELT", "Apache Kafka", "Batch processing", "Incremental backfills", "Partitioning", "Data reconciliation"] },
+  { group: "Cloud platforms", items: ["AWS: S3, Glue, EMR, Kinesis, Lambda, DynamoDB, CloudWatch, EC2, IAM", "GCP", "Azure (foundational training)"] },
+  { group: "Backend and databases", items: ["Java", "Spring Boot", "REST APIs", "Microservices", "PostgreSQL", "MongoDB", "Node.js"] },
+  { group: "DevOps and monitoring", items: ["Git", "GitLab CI/CD", "Docker", "Kubernetes", "Prometheus", "New Relic"] },
+  { group: "Machine learning", items: ["Computer vision", "Transfer learning", "Classification", "Graph neural networks"] },
+];
+
+export interface Work {
+  name: string; // GitHub repository name, never shown as the title
+  title: string;
+  kind?: string;
+  blurb: string;
+  stack: string;
+  href?: string;
+  context?: string;
+}
+
+export const metaspike = {
+  name: "MetaSpike",
+  status: "In development. The repository is private.",
+  blurb:
+    "A data pipeline that finds which games have the strongest content opportunity right now. It reads releases, patches and seasonal events, and measures attention against each game's own normal level, not raw popularity.",
+  proof:
+    "Entity resolution is tested against a frozen set of 200 labelled cases: 0 false automatic merges, and every uncertain match goes to quarantine instead of being guessed.",
+  stack: "Python, SQL. Designed for BigQuery, dbt and Cloud Run on GCP.",
+};
+
+export const work: Work[] = [
+  {
+    name: "briefcase",
+    title: "Briefcase",
+    kind: "Backend and full-stack",
+    blurb:
+      "Case management for small law firms. Tracks cases, billing (contingency, hourly or flat fee) and attorney assignments, then splits the fee between the firm and the team when a case closes. Role-based access and an audit log.",
+    stack: "Java, Spring Boot, PostgreSQL",
+    href: "https://github.com/KrishnaChittella/briefcase",
+    context: "Skills assessment at Softtechers",
+  },
+  {
+    name: "job-application-tracker",
+    title: "Job Application Tracker",
+    kind: "Full-stack",
+    blurb:
+      "Tracks applications through each stage and reads Outlook mail through Microsoft Graph to update status from rule-based keyword matching. JWT auth, search and a status dashboard.",
+    stack: "React, Spring Boot, PostgreSQL, Microsoft Graph",
+    href: "https://github.com/KrishnaChittella/job-application-tracker",
+    context: "Skills assessment at Softtechers",
+  },
+  {
+    name: "Power-Fault-Classification",
+    title: "Power Fault Classification",
+    kind: "Computer vision",
+    blurb: "Transfer learning on the insPLAD power-line inspection image dataset, applied to fault classification.",
+    stack: "Python, Jupyter",
+    href: "https://github.com/KrishnaChittella/Power-Fault-Classification",
+    context: "Computer Vision final project, USD",
+  },
+  {
+    name: "Simple-Movie-Recommender",
+    title: "Simple Movie Recommender",
+    kind: "Recommendation",
+    blurb:
+      "Recommends similar movies from a precomputed similarity matrix and shows posters from the TMDb API in a Streamlit app.",
+    stack: "Python, Streamlit, TMDb API",
+    href: "https://github.com/KrishnaChittella/Simple-Movie-Recommender",
+    context: "Onboarding task at TechRoots",
+  },
+];
+
+export const coursework: Work[] = [
+  {
+    name: "Classification-SVM",
+    title: "Classification SVM",
+    blurb: "Classification with support vector machines.",
+    stack: "Python, Jupyter",
+    href: "https://github.com/KrishnaChittella/Classification-SVM",
+    context: "Machine Learning Fundamentals, USD",
+  },
+  {
+    name: "MNIST_CNN",
+    title: "MNIST CNN",
+    blurb: "A convolutional neural network on the MNIST digits.",
+    stack: "Python, Jupyter",
+    href: "https://github.com/KrishnaChittella/MNIST_CNN",
+    context: "Machine Learning Fundamentals, USD",
+  },
+  {
+    name: "Understanding-Graph-Neural-Networks",
+    title: "Understanding Graph Neural Networks",
+    blurb: "A graph neural network notebook on the ESOL molecule dataset, for my own understanding.",
+    stack: "Python, Jupyter",
+    href: "https://github.com/KrishnaChittella/Understanding-Graph-Neural-Networks",
+    context: "Task from a professor during a graduate assistantship application",
+  },
+  {
+    name: "OptimizingSpaceXFalconLandings-",
+    title: "Optimizing SpaceX Falcon Landings",
+    blurb:
+      "SpaceX launch data from API and web scraping, SQL exploration, a Dash dashboard and landing prediction.",
+    stack: "Python, SQL, Dash",
+    href: "https://github.com/KrishnaChittella/OptimizingSpaceXFalconLandings-",
+    context: "Coursera certification project",
+  },
+];
+
+// ─── Playground ───────────────────────────────────────────────────────────────
+
+export interface App {
   id: string;
-  type: "listening" | "exploring" | "writing";
   title: string;
-  subtitle?: string;
-  body: string;
-  date: string;
-  link?: string;
+  tagline: string;
+  description: string;
+  kind: "Data" | "Games";
   tags: string[];
+  status: string;
+  accent: "magenta" | "cyan";
+  facts: string[];
+  specs: [string, string][];
 }
 
-export const journalEntries: JournalEntry[] = [
+export const apps: App[] = [
   {
-    id: "fiserv-rpa",
-    type: "listening",
-    title: "Jami DeHaven — Fiserv RPA Podcast",
-    subtitle: "Robotic Process Automation in Enterprise",
-    body:
-      "DeHaven breaks down how RPA is being deployed at financial scale — the actual implementation challenges, change management, and where the technology genuinely delivers vs where it gets oversold. Practical and grounded.",
-    date: "Mar 2025",
-    link: "#",
-    tags: ["RPA", "Automation", "Fintech", "Enterprise"],
+    id: "metaspike",
+    title: "MetaSpike",
+    tagline: "Which game is worth making content about right now?",
+    description:
+      "A data pipeline that scores gaming content opportunities around releases, patches and seasons, relative to each game's own baseline. It will be shown here once the full version is built.",
+    kind: "Data",
+    tags: ["Python", "Data engineering", "GCP"],
+    status: "In development",
+    accent: "cyan",
+    facts: [
+      "Scores attention against each game's own normal level, not raw popularity.",
+      "Canonical entity resolution with stable identities, aliases and merge and split lineage.",
+      "A deterministic resolver with no learning and no fuzzy matching. Uncertain records go to quarantine.",
+      "Tested on a frozen set of 200 labelled cases: 0 false automatic merges.",
+    ],
+    specs: [
+      ["STATUS", "In development"],
+      ["STACK", "Python, SQL"],
+      ["TARGET", "GCP: BigQuery, dbt, Cloud Run"],
+      ["OUTPUT", "krishnachittella.dev/metaspike (planned)"],
+      ["REPO", "Private"],
+    ],
   },
   {
-    id: "llm-infrastructure",
-    type: "exploring",
-    title: "The LLM Infrastructure Gap",
-    subtitle: "What production AI actually needs",
-    body:
-      "Most LLM demos skip the hard part: evaluation, versioning, cost control, and latency at scale. Exploring what a real production AI stack looks like — not the notebook, but the plumbing that makes it reliable.",
-    date: "Mar 2025",
-    tags: ["LLM", "MLOps", "Infrastructure", "AI"],
-  },
-  {
-    id: "data-contracts",
-    type: "exploring",
-    title: "Data Contracts & Schema Evolution",
-    subtitle: "Why upstream changes silently break downstream",
-    body:
-      "Downstream consumers break when upstream schemas change without notice. Exploring contract testing for data pipelines — tools like Great Expectations, dbt tests, and how to enforce schema agreements across teams.",
-    date: "Feb 2025",
-    tags: ["Data Engineering", "dbt", "Schema", "Testing"],
-  },
-  {
-    id: "from-models-to-pipelines",
-    type: "writing",
-    title: "From Models to Pipelines",
-    subtitle: "What data engineering actually taught me",
-    body:
-      "Moving from ML to data engineering felt like switching languages. Here's what changed about how I think about software when reliability replaces accuracy as the primary metric.",
-    date: "Feb 2025",
-    tags: ["Data Engineering", "Reflection"],
-  },
-  {
-    id: "typescript-backend",
-    type: "writing",
-    title: "The Quiet Power of TypeScript for Backend Engineers",
-    subtitle: "",
-    body:
-      "I resisted TypeScript for too long. Then I used it on a real project with real data contracts and real team coordination. Here's why I won't go back.",
-    date: "Jan 2025",
-    tags: ["TypeScript", "Backend"],
+    id: "anverse",
+    title: "anEverse",
+    tagline: "An anime story that runs on your own GPU.",
+    description:
+      "An interactive visual-novel style story game. A language model runs in the browser through WebGPU and narrates, so there is no login, no server and no paid API.",
+    kind: "Games",
+    tags: ["React", "TypeScript", "WebGPU", "WebLLM"],
+    status: "In development",
+    accent: "magenta",
+    facts: [
+      "Six original stories with genre filters and search.",
+      "A story and character creator with a live portrait editor.",
+      "Streaming narration with NPC dialogue, three suggested actions per reply and free-form input.",
+      "Memory of facts, events, locations, inventory and NPC relationships, checked by game code.",
+      "Autosave, named save slots, import and export.",
+    ],
+    specs: [
+      ["STATUS", "In development"],
+      ["STACK", "React, TypeScript, WebLLM"],
+      ["RUNS IN", "WebGPU browsers: Chrome or Edge 113+"],
+      ["NEEDS", "About 2.3 GB free GPU memory (3B model)"],
+      ["REPO", "Private"],
+    ],
   },
 ];
-
-// ─── Beyond Code — Gaming ─────────────────────────────────────────────────────
 
 export interface Game {
   title: string;
@@ -311,29 +278,30 @@ export interface GameCategory {
 export const gameCategories: GameCategory[] = [
   {
     id: "primary",
-    label: "Primary",
-    description: "The ones I keep coming back to. Polished, demanding, and deeply built.",
+    label: "Main rotation",
+    description: "The ones I keep coming back to.",
     games: [
       { title: "Red Dead Redemption 2", note: "Unmatched world detail" },
       { title: "Escape From Tarkov", note: "High stakes, no hand-holding" },
       { title: "Rainbow Six Siege", note: "Tactical depth, fast thinking" },
+      { title: "Wardogs" },
     ],
     accent: "pink",
   },
   {
     id: "strategy",
-    label: "Strategy / Economy",
-    description: "Systems games. The kind that reward patience and long-term thinking.",
+    label: "Strategy and economy",
+    description: "Systems games that reward patience.",
     games: [
-      { title: "Anno 1800", note: "Production chains & city planning" },
+      { title: "Anno 1800", note: "Production chains and city planning" },
       { title: "Cities: Skylines", note: "Urban systems thinking" },
     ],
     accent: "yellow",
   },
   {
     id: "extraction",
-    label: "Extraction / Survival",
-    description: "High pressure, sparse resources. The tension is the game.",
+    label: "Extraction and survival",
+    description: "Sparse resources, high pressure.",
     games: [
       { title: "Rust", note: "Brutal and social" },
       { title: "The Division 2", note: "Atmosphere and gunplay" },
@@ -341,4 +309,37 @@ export const gameCategories: GameCategory[] = [
     ],
     accent: "cyan",
   },
+  {
+    id: "space",
+    label: "Space and simulation",
+    description: "Space flight and open-ended simulation.",
+    games: [{ title: "Star Citizen" }],
+    accent: "pink",
+  },
 ];
+
+export const creator = {
+  name: "KICKREAPER",
+  links: [
+    { platform: "YouTube", handle: "@kickreaper", href: "https://www.youtube.com/@kickreaper", accent: "magenta" },
+    { platform: "Instagram", handle: "@its_kickreaper", href: "https://www.instagram.com/its_kickreaper", accent: "cyan" },
+    { platform: "TikTok", handle: "@kickreaper15", href: "https://www.tiktok.com/@kickreaper15", accent: "amber" },
+  ] as const,
+};
+
+// Featured banner on the Loadout page. Change releaseAt to update the countdown.
+export const gta6 = {
+  label: "MOST ANTICIPATED",
+  title: "GRAND THEFT AUTO VI",
+  tagline: "Can't wait for GTA VI. Bought this hehe.",
+  badge: "DAY ONE BUY",
+  // Local midnight on the release date. Rockstar has not confirmed a worldwide unlock time.
+  releaseAt: "2026-11-19T00:00:00",
+  art: {
+    landscape: "/images/gta-vi/cover-landscape.jpg",
+    portrait: "/images/gta-vi/cover-portrait.jpg",
+    alt: "Official Grand Theft Auto VI cover art: illustrated panels of the game's characters, a yellow sports car, a speedboat and a stunt motorcycle around the Grand Theft Auto VI logo.",
+    credit: "Official cover art © Rockstar Games",
+    source: "https://www.rockstargames.com/VI/media/artwork-wallpapers",
+  },
+};

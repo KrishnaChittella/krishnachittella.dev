@@ -2,145 +2,58 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import { apps } from "@/lib/data";
 
-const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/projects", label: "Projects" },
-  { href: "/experiments", label: "Lab" },
-  { href: "/journey", label: "Journey" },
-  { href: "/beyond-code", label: "Beyond Code" },
-  { href: "/journal", label: "Journal" },
-  { href: "/contact", label: "Contact" },
+const links = [
+  { href: "/playground", label: "Library" },
+  { href: "/playground/loadout", label: "Loadout" },
+  { href: "/", label: "Portfolio ↗" },
 ];
 
 export default function Navbar() {
-  const pathname = usePathname();
-  const [scrolled, setScrolled] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 24);
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  useEffect(() => {
-    setMobileOpen(false);
-  }, [pathname]);
+  const pathname = usePathname().replace(/\/$/, "") || "/";
 
   return (
-    <motion.header
-      initial={{ y: -80, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? "bg-bg/80 backdrop-blur-xl border-b border-white/5 shadow-[0_4px_32px_rgba(0,0,0,0.6)]"
-          : "bg-transparent"
-      }`}
-    >
-      <nav className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        {/* Logo */}
-        <Link href="/" className="group flex items-center gap-2">
-          <span className="w-2 h-2 rounded-full bg-neon-cyan group-hover:shadow-neon-cyan transition-shadow duration-300" />
-          <span className="font-orbitron text-sm font-bold tracking-widest text-text-primary group-hover:text-neon-cyan transition-colors duration-300">
-            KC
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-vn-1/80 backdrop-blur-xl">
+      <div className="mx-auto flex h-16 max-w-[1320px] items-center justify-between gap-2 px-4 sm:gap-4 sm:px-5 lg:px-16">
+        <Link href="/playground" className="flex flex-col leading-none">
+          <span className="flex items-center gap-2">
+            <span
+              className="h-2 w-2 animate-pulse rounded-full bg-vcyan shadow-[0_0_10px_rgba(5,217,232,0.8)] motion-reduce:animate-none"
+              aria-hidden="true"
+            />
+            <span className="whitespace-nowrap font-chivo text-lg font-extrabold uppercase tracking-tight">
+              KC // Play<span className="hidden sm:inline">ground</span>
+            </span>
+            <span className="hidden rounded-sm bg-magenta px-1.5 py-0.5 font-mono text-[0.6875rem] font-semibold tracking-[0.08em] text-[#2a0014] sm:inline">
+              SANDBOX
+            </span>
+          </span>
+          <span className="mt-1.5 hidden font-mono text-[0.6875rem] font-semibold tracking-[0.14em] text-vcyan sm:block">
+            STATUS: BUILDING // {apps.length} IN DEVELOPMENT
           </span>
         </Link>
 
-        {/* Desktop Nav */}
-        <ul className="hidden md:flex items-center gap-1">
-          {navLinks.map((link) => {
-            const isActive =
-              link.href === "/"
-                ? pathname === "/"
-                : pathname.startsWith(link.href);
-
+        <nav aria-label="Primary" className="flex items-center gap-1">
+          {links.map((l) => {
+            const active = pathname === l.href;
             return (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className={`relative px-3 py-1.5 text-xs font-medium tracking-wider uppercase transition-colors duration-200 ${
-                    isActive
-                      ? "text-neon-cyan"
-                      : "text-text-muted hover:text-text-primary"
-                  }`}
-                >
-                  {isActive && (
-                    <motion.span
-                      layoutId="nav-active"
-                      className="absolute inset-0 bg-neon-cyan/8 border border-neon-cyan/20 rounded"
-                      transition={{ type: "spring", bounce: 0.2, duration: 0.4 }}
-                    />
-                  )}
-                  <span className="relative z-10">{link.label}</span>
-                </Link>
-              </li>
+              <Link
+                key={l.href}
+                href={l.href}
+                aria-current={active ? "page" : undefined}
+                className={`whitespace-nowrap rounded px-2 py-1.5 font-chivo text-sm font-semibold transition-all sm:px-3 sm:text-[0.9375rem] ${
+                  active
+                    ? "bg-magenta/20 text-[#ff9ec0] shadow-[0_0_16px_rgba(255,42,133,0.25)]"
+                    : "text-vn-sub hover:bg-vn-3 hover:text-vn-text"
+                }`}
+              >
+                {l.label}
+              </Link>
             );
           })}
-        </ul>
-
-        {/* Mobile hamburger */}
-        <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden flex flex-col gap-1.5 p-2"
-          aria-label="Toggle menu"
-        >
-          <motion.span
-            animate={mobileOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
-            className="block w-5 h-px bg-text-primary origin-center"
-          />
-          <motion.span
-            animate={mobileOpen ? { opacity: 0 } : { opacity: 1 }}
-            className="block w-5 h-px bg-text-primary"
-          />
-          <motion.span
-            animate={mobileOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }}
-            className="block w-5 h-px bg-text-primary origin-center"
-          />
-        </button>
-      </nav>
-
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {mobileOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="md:hidden bg-panel/95 backdrop-blur-xl border-b border-white/5 overflow-hidden"
-          >
-            <ul className="px-6 py-4 flex flex-col gap-1">
-              {navLinks.map((link, i) => {
-                const isActive =
-                  link.href === "/"
-                    ? pathname === "/"
-                    : pathname.startsWith(link.href);
-                return (
-                  <motion.li
-                    key={link.href}
-                    initial={{ opacity: 0, x: -16 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.04, duration: 0.3 }}
-                  >
-                    <Link
-                      href={link.href}
-                      className={`block py-2.5 text-sm font-medium tracking-wider uppercase transition-colors duration-200 ${
-                        isActive ? "text-neon-cyan" : "text-text-muted"
-                      }`}
-                    >
-                      {link.label}
-                    </Link>
-                  </motion.li>
-                );
-              })}
-            </ul>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.header>
+        </nav>
+      </div>
+    </header>
   );
 }

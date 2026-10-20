@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "ai-color-palette",
+        "value": "*",
+        "files": [
+          "app/(portfolio)/page.tsx"
+        ],
+        "createdAt": "2026-10-20T03:33:43.826Z",
+        "reason": "Indigo #4338CA is the primary accent in the user-supplied Stitch DESIGN.md (Engineered Clarity); user asked to recreate the reference colors. Not a generic AI palette choice."
+      }
+    ]
+  }
+}
