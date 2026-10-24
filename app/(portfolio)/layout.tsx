@@ -11,12 +11,12 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
   title: "Lakshmi Varaha Krishna Chittella | Data Engineer",
   description:
-    "Lakshmi Varaha Krishna Chittella is a data engineer with an M.S. in Computer Science. Pipelines on AWS and GCP, with experience in Java backend work.",
+    "Lakshmi Varaha Krishna Chittella is a data engineer with an M.S. in Computer Science. Python and SQL pipelines, Snowflake, Spark, dbt and BigQuery. Builder of the live Cover Next data product.",
   authors: [{ name: "Lakshmi Varaha Krishna Chittella" }],
   icons: { icon: "/favicon.svg" },
   openGraph: {
     title: "Lakshmi Varaha Krishna Chittella | Data Engineer",
-    description: "Data pipelines on AWS and GCP. M.S. in Computer Science, University of South Dakota.",
+    description: "Python and SQL data pipelines, Snowflake and Spark. Builder of Cover Next. M.S. in Computer Science, University of South Dakota.",
     type: "website",
     url: "/",
     siteName: "Lakshmi Varaha Krishna Chittella",

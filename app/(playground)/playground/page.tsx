@@ -11,7 +11,7 @@ export default function Library() {
           style={{ "--i": 0 } as React.CSSProperties}
         >
           <span className="h-2 w-2 animate-ping rounded-full bg-magenta motion-reduce:animate-none" aria-hidden="true" />
-          {apps.length} PROJECTS // IN DEVELOPMENT // REPOS PRIVATE
+          {apps.length} PROJECTS // COVER NEXT IS LIVE
         </p>
         <h1
           className="enter bg-gradient-to-r from-magenta via-[#ff9ec0] to-vcyan bg-clip-text font-chivo text-[2.375rem] font-black uppercase leading-[2.75rem] tracking-[-0.02em] text-transparent drop-shadow-[0_0_35px_rgba(255,42,133,0.35)] sm:text-[4rem] sm:leading-[4.5rem] sm:tracking-[-0.03em]"
@@ -20,7 +20,7 @@ export default function Library() {
           Playground
         </h1>
         <p className="enter max-w-2xl text-lg leading-[1.875rem] text-vn-sub" style={{ "--i": 2 } as React.CSSProperties}>
-          Apps and experiments I build outside work. Open a card to see how it works. Nothing here is public yet.
+          Apps and experiments I build outside work. Open a card to see how it works. Cover Next is live; the rest are still in development.
         </p>
       </section>
 
