@@ -36,7 +36,12 @@ function Card({ app, index, open, onToggle }: { app: App; index: number; open: b
             {`APP_${String(index + 1).padStart(2, "0")} // ${app.status.toUpperCase()}`}
           </span>
           <span className="text-vn-sub">{app.kind.toUpperCase()}</span>
-          <span className="h-2 w-2 animate-pulse rounded-full bg-amber shadow-[0_0_8px_rgba(255,122,0,0.8)] motion-reduce:animate-none" aria-hidden="true" />
+          <span
+            className={`h-2 w-2 animate-pulse rounded-full motion-reduce:animate-none ${
+              app.href ? "bg-[#22e57a] shadow-[0_0_8px_rgba(34,229,122,0.8)]" : "bg-amber shadow-[0_0_8px_rgba(255,122,0,0.8)]"
+            }`}
+            aria-hidden="true"
+          />
         </div>
 
         <h3 className="font-chivo text-[1.5rem] font-bold leading-8 tracking-[-0.01em]">{app.title}</h3>
@@ -64,13 +69,24 @@ function Card({ app, index, open, onToggle }: { app: App; index: number; open: b
               ▾
             </span>
           </button>
-          <button
-            type="button"
-            disabled
-            className="rounded-md border border-vcyan/30 bg-vn-2 px-4 py-2.5 font-mono text-[0.8125rem] font-medium text-vcyan/60"
-          >
-            Not public yet
-          </button>
+          {app.href ? (
+            <a
+              href={app.href}
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-md border border-[#22e57a]/50 bg-vn-2 px-4 py-2.5 font-mono text-[0.8125rem] font-medium text-[#22e57a] transition-colors hover:bg-vn-3"
+            >
+              Visit live site <span aria-hidden="true">↗</span>
+            </a>
+          ) : (
+            <button
+              type="button"
+              disabled
+              className="rounded-md border border-vcyan/30 bg-vn-2 px-4 py-2.5 font-mono text-[0.8125rem] font-medium text-vcyan/60"
+            >
+              Not public yet
+            </button>
+          )}
         </div>
       </div>
 

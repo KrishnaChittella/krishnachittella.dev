@@ -5,10 +5,11 @@ import { useEffect, useState } from "react";
 import { profile } from "@/lib/data";
 
 const links = [
-  { id: "work", label: "Work" },
+  { id: "summary", label: "Summary" },
   { id: "experience", label: "Experience" },
+  { id: "projects", label: "Projects" },
   { id: "education", label: "Education" },
-  { id: "skills", label: "Skills" },
+  { id: "additional", label: "Additional" },
   { id: "contact", label: "Contact" },
 ];
 

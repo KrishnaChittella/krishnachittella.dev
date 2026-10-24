@@ -30,7 +30,7 @@ export default function Navbar() {
             </span>
           </span>
           <span className="mt-1.5 hidden font-mono text-[0.6875rem] font-semibold tracking-[0.14em] text-vcyan sm:block">
-            STATUS: BUILDING // {apps.length} IN DEVELOPMENT
+            STATUS: BUILDING // {apps.filter((a) => a.href).length} LIVE // {apps.filter((a) => !a.href).length} IN DEVELOPMENT
           </span>
         </Link>
 

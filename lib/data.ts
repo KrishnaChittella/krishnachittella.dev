@@ -1,10 +1,10 @@
-// All site copy. Every claim here was confirmed by Krishna; add nothing unverified.
+// All site copy. Portfolio copy follows the résumé (public/Lakshmi-Varaha-Krishna-Chittella-Resume.pdf); add nothing unverified.
 
 export const profile = {
   name: "Lakshmi Varaha Krishna Chittella",
   role: "Data engineer",
   summary:
-    "I build and monitor data pipelines on AWS and GCP. Master's in Computer Science from the University of South Dakota. Looking for data engineering, analytics and ML engineering roles in the US.",
+    "Data Engineer with 2.5 years of experience developing Python and SQL data pipelines, Snowflake transformations and Spark-based processing. I deliver dependable operational reporting through incremental loads, data modeling, reconciliation and production troubleshooting, and I independently launched the live Cover Next data product.",
   email: "krishna.chittella@gmail.com",
   github: "https://github.com/KrishnaChittella",
   linkedin: "https://www.linkedin.com/in/lakshmi-varaha-krishna-chittella/",
@@ -18,45 +18,38 @@ export interface Job {
   title: string;
   period: string;
   bullets: string[];
-  stack?: string;
 }
 
 export const experience: Job[] = [
   {
     company: "Softtechers LLC",
-    title: "Software Engineer I",
+    title: "Data Engineer",
     period: "Dec 2025 – Present",
     bullets: [
-      "Contributed to a confidential enterprise case-management platform built with Java, Spring Boot, microservices, MongoDB and Apache Kafka.",
-      "Worked with containerized services and used Prometheus and New Relic for monitoring and troubleshooting during client work.",
-      "Built Briefcase, a Spring Boot and PostgreSQL case-management app, and a job application tracker with React and Outlook status updates through Microsoft Graph. Both were supervised skills assessments.",
+      "Engineered Python and SQL pipelines integrating case, customer and activity records from PostgreSQL and REST APIs for operational analytics.",
+      "Built paginated API extractors with authentication, bounded retries, exception handling and structured execution logs.",
+      "Integrated case assignment, status-change and resolution events into consistent datasets for downstream reporting.",
+      "Modeled current case records alongside event histories to support point-in-time analysis and operational reporting.",
+      "Created staging transformations using SQL CTEs, joins, window functions and aggregations to prepare analytical datasets.",
+      "Standardized customer identifiers, case statuses, timestamps and source fields across disparate application systems.",
+      "Implemented null, duplicate-key and source-to-target reconciliation checks to prevent invalid records from reaching reports.",
+      "Replaced full reloads with timestamp-based incremental extraction and SQL upserts for new and modified records.",
+      "Maintained scheduled runs, dependency checks, execution logging and controlled reprocessing for failed data refreshes.",
+      "Published SQL reporting views for case volume, open backlog, resolution trends and service-level performance.",
     ],
-    stack:
-      "Java, Spring Boot, microservices, Apache Kafka, MongoDB, Docker, Kubernetes, Node.js, Prometheus, New Relic, GitLab CI/CD, Git",
   },
   {
     company: "TechRoots Inc.",
     title: "Data Engineer",
-    period: "Jan 2025 – Dec 2025",
+    period: "Jan 2025 – Nov 2025",
     bullets: [
-      "Monitored and supported three to four client ETL/ELT pipelines on AWS: investigated CloudWatch alerts, traced failures and fixed issues with the technical lead's guidance.",
-      "Investigated Kafka ingestion interruptions under heavy load and helped rework data sourcing to restore the pipeline's data flow.",
-      "Reviewed execution plans for slow transformations, then tuned computation and storage access and partitioned data to reduce bottlenecks.",
-      "Handled upstream feeds that arrived about three hours late with incremental, partitioned backfills instead of full reloads.",
-      "Recovered three missed days of daily batch aggregations after an expired API token stalled retries. Chose sequential or parallel catch-up runs from the job dependencies, watched cluster memory and query concurrency, and reconciled source and destination record counts for each date.",
-      "Applied GCP pipeline and Python/PySpark training to the work and took part in recurring sprint-based troubleshooting.",
-    ],
-    stack:
-      "AWS (Kafka, Kinesis, S3, DynamoDB, Lambda, Glue, EMR, EC2, IAM, CloudWatch), GCP, PySpark, ETL/ELT, GitLab CI/CD",
-  },
-  {
-    company: "USD Campus Retail Food Services",
-    title: "Student Lead",
-    period: "Aug 2024 – Dec 2024",
-    bullets: [
-      "Led the student team after working part-time in the stores since Aug 2023.",
-      "Checked inventory, ordered supplies and trained new staff.",
-      "Shared service-demand observations with managers, such as when rush hours hit and when it went quiet.",
+      "Supported 4 production ETL/ELT pipelines in Snowflake delivering customer, sales and billing datasets for reporting.",
+      "Developed SQL transformations for staging and reporting tables using joins, aggregations and business-rule validations.",
+      "Applied PySpark and Python to clean source fields, standardize data types and process structured datasets.",
+      "Supported incremental data-loading workflows and validated source updates before loading reporting tables.",
+      "Reconciled source and target records with SQL counts, aggregates, key comparisons and duplicate/null checks.",
+      "Diagnosed pipeline failures involving SQL errors, missing inputs and dependency issues; verified controlled reruns.",
+      "Documented recurring failure scenarios, validation queries and recovery steps to streamline troubleshooting.",
     ],
   },
   {
@@ -65,36 +58,42 @@ export const experience: Job[] = [
     title: "Associate Systems Engineer",
     period: "Oct 2022 – May 2023",
     bullets: [
-      "Completed foundational Azure cloud training during onboarding, then joined an Axway B2Bi integration project.",
-      "Supported Java application development for the project and was commended for a useful technical insight.",
+      "Validated Oracle batch ETL loads of customer and transaction data into operational reporting tables.",
+      "Wrote SQL joins and aggregations; checked record counts, null fields, duplicate identifiers and key consistency.",
+      "Investigated batch failures with senior engineers, verified completeness after reruns and supported historical reprocessing.",
+      "Maintained ETL mappings, test evidence and operational runbooks for troubleshooting and team knowledge transfer.",
     ],
-    stack: "Java, Azure, Axway B2Bi",
   },
 ];
 
 export const education = [
   {
     school: "University of South Dakota",
-    place: "Vermillion, SD",
     degree: "M.S. in Computer Science",
-    period: "Aug 2023 – Dec 2024",
-    note: "GPA 3.6/4.0. Coursework: Machine Learning Fundamentals, Advanced Artificial Intelligence, Computer Vision, Pattern Recognition in Machine Learning, High Performance Computing, AI in Medical Informatics, Internet of Things, Operating Systems and Architecture, Quantum Computing.",
+    period: "Dec 2024",
+    note: "GPA 3.6/4.0",
   },
   {
-    school: "BVC College of Engineering",
-    place: "Rajahmundry, affiliated with JNTUK",
+    school: "BVC College of Engineering (JNTUK)",
     degree: "B.Tech in Computer Science and Engineering",
-    period: "Graduated 2022",
+    period: "2022",
     note: "",
   },
 ];
 
+export const leadership = {
+  title: "Student Lead",
+  org: "University of South Dakota Campus Retail Food Services",
+  period: "2024",
+  note: "Staff training and operations.",
+};
+
 export const skills: { group: string; items: string[] }[] = [
-  { group: "Data engineering", items: ["Python", "SQL", "PySpark", "ETL/ELT", "Apache Kafka", "Batch processing", "Incremental backfills", "Partitioning", "Data reconciliation"] },
-  { group: "Cloud platforms", items: ["AWS: S3, Glue, EMR, Kinesis, Lambda, DynamoDB, CloudWatch, EC2, IAM", "GCP", "Azure (foundational training)"] },
-  { group: "Backend and databases", items: ["Java", "Spring Boot", "REST APIs", "Microservices", "PostgreSQL", "MongoDB", "Node.js"] },
-  { group: "DevOps and monitoring", items: ["Git", "GitLab CI/CD", "Docker", "Kubernetes", "Prometheus", "New Relic"] },
-  { group: "Machine learning", items: ["Computer vision", "Transfer learning", "Classification", "Graph neural networks"] },
+  { group: "Programming and processing", items: ["Python", "SQL", "Java", "Apache Spark", "PySpark", "Spark SQL", "pandas"] },
+  { group: "Data engineering", items: ["ETL/ELT", "Data warehousing", "dbt", "Data modeling", "Incremental loads", "Data quality", "Reconciliation", "Airflow"] },
+  { group: "Databases and BI", items: ["Snowflake", "BigQuery", "PostgreSQL", "Oracle", "MongoDB", "DynamoDB", "Tableau", "Power BI"] },
+  { group: "Cloud and streaming", items: ["AWS: S3, Glue, EMR, Lambda, Kinesis, EC2, CloudWatch", "Azure: Data Factory, Databricks, Blob Storage, Synapse, Event Hubs", "GCP: Cloud Storage, Cloud Monitoring", "Kafka"] },
+  { group: "Engineering tools", items: ["Git", "GitLab", "GitHub Actions", "CI/CD", "Docker", "Kubernetes", "Terraform", "Linux", "REST APIs"] },
 ];
 
 export interface Work {
@@ -107,14 +106,20 @@ export interface Work {
   context?: string;
 }
 
-export const metaspike = {
-  name: "MetaSpike",
-  status: "In development. The repository is private.",
+// From the cover-next README and docs/engineering.md.
+export const coverNext = {
+  name: "Cover Next",
+  live: "https://cover-next.krishnachittella.dev",
+  repo: "https://github.com/KrishnaChittella/cover-next",
   blurb:
-    "A data pipeline that finds which games have the strongest content opportunity right now. It reads releases, patches and seasonal events, and measures attention against each game's own normal level, not raw popularity.",
-  proof:
-    "Entity resolution is tested against a frozen set of 200 labelled cases: 0 false automatic merges, and every uncertain match goes to quarantine instead of being guessed.",
-  stack: "Python, SQL. Designed for BigQuery, dbt and Cloud Run on GCP.",
+    "A free site for gaming YouTubers: which game is worth a video right now? It compares each game's Wikipedia views for the last 7 days against the 7 before, next to the past week's most-watched YouTube videos about it.",
+  facts: [
+    "Games are labelled rising, steady or cooling from the Wikipedia change.",
+    "Game identity comes from IGDB through a deterministic resolver; uncertain matches go to quarantine instead of being guessed.",
+    "A daily GitHub Actions run collects the data in Python and publishes the Next.js site.",
+    "dbt models on BigQuery, with the GCP project managed in Terraform.",
+  ],
+  stack: ["Python", "SQL", "dbt", "BigQuery", "Terraform", "GitHub Actions", "Next.js"],
 };
 
 export const work: Work[] = [
@@ -129,69 +134,13 @@ export const work: Work[] = [
     context: "Skills assessment at Softtechers",
   },
   {
-    name: "job-application-tracker",
-    title: "Job Application Tracker",
-    kind: "Full-stack",
-    blurb:
-      "Tracks applications through each stage and reads Outlook mail through Microsoft Graph to update status from rule-based keyword matching. JWT auth, search and a status dashboard.",
-    stack: "React, Spring Boot, PostgreSQL, Microsoft Graph",
-    href: "https://github.com/KrishnaChittella/job-application-tracker",
-    context: "Skills assessment at Softtechers",
-  },
-  {
     name: "Power-Fault-Classification",
-    title: "Power Fault Classification",
+    title: "Power-Line Fault Classification",
     kind: "Computer vision",
-    blurb: "Transfer learning on the insPLAD power-line inspection image dataset, applied to fault classification.",
+    blurb: "Applied transfer learning to classify faults in insPLAD power-line inspection images.",
     stack: "Python, Jupyter",
     href: "https://github.com/KrishnaChittella/Power-Fault-Classification",
     context: "Computer Vision final project, USD",
-  },
-  {
-    name: "Simple-Movie-Recommender",
-    title: "Simple Movie Recommender",
-    kind: "Recommendation",
-    blurb:
-      "Recommends similar movies from a precomputed similarity matrix and shows posters from the TMDb API in a Streamlit app.",
-    stack: "Python, Streamlit, TMDb API",
-    href: "https://github.com/KrishnaChittella/Simple-Movie-Recommender",
-    context: "Onboarding task at TechRoots",
-  },
-];
-
-export const coursework: Work[] = [
-  {
-    name: "Classification-SVM",
-    title: "Classification SVM",
-    blurb: "Classification with support vector machines.",
-    stack: "Python, Jupyter",
-    href: "https://github.com/KrishnaChittella/Classification-SVM",
-    context: "Machine Learning Fundamentals, USD",
-  },
-  {
-    name: "MNIST_CNN",
-    title: "MNIST CNN",
-    blurb: "A convolutional neural network on the MNIST digits.",
-    stack: "Python, Jupyter",
-    href: "https://github.com/KrishnaChittella/MNIST_CNN",
-    context: "Machine Learning Fundamentals, USD",
-  },
-  {
-    name: "Understanding-Graph-Neural-Networks",
-    title: "Understanding Graph Neural Networks",
-    blurb: "A graph neural network notebook on the ESOL molecule dataset, for my own understanding.",
-    stack: "Python, Jupyter",
-    href: "https://github.com/KrishnaChittella/Understanding-Graph-Neural-Networks",
-    context: "Task from a professor during a graduate assistantship application",
-  },
-  {
-    name: "OptimizingSpaceXFalconLandings-",
-    title: "Optimizing SpaceX Falcon Landings",
-    blurb:
-      "SpaceX launch data from API and web scraping, SQL exploration, a Dash dashboard and landing prediction.",
-    stack: "Python, SQL, Dash",
-    href: "https://github.com/KrishnaChittella/OptimizingSpaceXFalconLandings-",
-    context: "Coursera certification project",
   },
 ];
 
@@ -208,32 +157,36 @@ export interface App {
   accent: "magenta" | "cyan";
   facts: string[];
   specs: [string, string][];
+  href?: string; // set once the app is public; marks it live
 }
 
 export const apps: App[] = [
   {
-    id: "metaspike",
-    title: "MetaSpike",
-    tagline: "Which game is worth making content about right now?",
+    id: "cover-next",
+    title: "Cover Next",
+    tagline: "Which game is worth a video right now?",
     description:
-      "A data pipeline that scores gaming content opportunities around releases, patches and seasons, relative to each game's own baseline. It will be shown here once the full version is built.",
+      "A free site for gaming YouTubers. Every day it compares each game's Wikipedia views for the last 7 days against the 7 before, next to the most-watched YouTube videos about it from the past week.",
     kind: "Data",
-    tags: ["Python", "Data engineering", "GCP"],
-    status: "In development",
+    tags: ["Python", "dbt", "BigQuery", "Terraform", "Next.js"],
+    status: "Live",
     accent: "cyan",
     facts: [
-      "Scores attention against each game's own normal level, not raw popularity.",
-      "Canonical entity resolution with stable identities, aliases and merge and split lineage.",
-      "A deterministic resolver with no learning and no fuzzy matching. Uncertain records go to quarantine.",
-      "Tested on a frozen set of 200 labelled cases: 0 false automatic merges.",
+      "Games are labelled rising, steady or cooling from the Wikipedia change. Search, sort and a watchlist kept in your browser.",
+      "YouTube videos are shown one by one with their own view counts, never added up across channels.",
+      "Game identity from IGDB through a deterministic resolver: 200 frozen labelled cases, 0 false automatic merges. Uncertain records go to quarantine.",
+      "A daily GitHub Actions run collects the data in Python and publishes the site. dbt models on BigQuery, GCP managed in Terraform.",
+      "No accounts, no cookies, no analytics.",
     ],
     specs: [
-      ["STATUS", "In development"],
-      ["STACK", "Python, SQL"],
-      ["TARGET", "GCP: BigQuery, dbt, Cloud Run"],
-      ["OUTPUT", "krishnachittella.dev/metaspike (planned)"],
-      ["REPO", "Private"],
+      ["STATUS", "Live, updated daily"],
+      ["STACK", "Python, SQL, dbt, Next.js"],
+      ["CLOUD", "GCP: BigQuery, Terraform"],
+      ["SOURCES", "Wikimedia, YouTube, IGDB"],
+      ["SITE", "cover-next.krishnachittella.dev"],
+      ["REPO", "github.com/KrishnaChittella/cover-next"],
     ],
+    href: "https://cover-next.krishnachittella.dev",
   },
   {
     id: "anverse",
